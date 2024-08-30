@@ -206,7 +206,7 @@
                                                 <img src="{{ asset('/') }}website/assets/images/products/product-1.jpg"
                                                     alt="#">
                                                 <div class="button">
-                                                    <a href="{{ route('product-details') }}" class="btn"><i
+                                                    <a href="{{ route('checkout') }}" class="btn"><i
                                                             class="lni lni-cart"></i> Add to Cart</a>
                                                 </div>
                                             </div>
