@@ -88,8 +88,8 @@
                             class="ti-layout-grid2"></i><span class="hide-menu">Category
                             Module</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-calendar.html">Add Category</a></li>
-                        <li><a href="app-chat.html">Manage Category Module</a></li>
+                        <li><a href="{{ route('category.add') }}">Add Category</a></li>
+                        <li><a href="{{ route('category.manage') }}">Manage Category Module</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i

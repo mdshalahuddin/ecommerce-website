@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyCommerceController;
@@ -28,4 +29,6 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('/category/add',[CategoryController::class,'index'])->name('category.add');
+    Route::get('/category/manage',[CategoryController::class,'manage'])->name('category.manage');
 });
