@@ -12,7 +12,7 @@ class CategoryController extends Controller
         return view('admin.category.index');
     }
     public function manage(){
-        return view('admin.category.manage');
+        return view('admin.category.manage',['categories'=>Category::all()]);
     }
 
   public  function create(Request $request){

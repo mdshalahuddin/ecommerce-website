@@ -8,12 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    private static $category;
+    private static $category, $image, $imageName, $directory, $imageUrl;
+    public static function getImageUrl($request){
+        self::$image = $request->file('image');
+        self::$imageName = Self::$image->getClientOriginalName();
+        self::$directory = 'upload/category-image/';
+        self::$image->move(Self::$directory,self::$imageName);
+        self::$imageUrl = self::$directory.self::$imageName;
+        return self::$imageUrl;
+    }
     public static function newCategory($request){
         self::$category = new Category();
         self::$category->name = $request->name;
         self::$category-> description  = $request-> description ;
-        self::$category->image = $request->image;
+        self::$category->image = self::getImageUrl($request);
         self::$category->status = $request->status;
         self::$category->save();
     }

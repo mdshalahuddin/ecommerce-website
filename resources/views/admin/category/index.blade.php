@@ -8,7 +8,8 @@
                     <h4 class="card-title">Add Category Form</h4>
                     <h5 class="text-center text-success">{{ session('message') }}</h5>
                     <hr>
-                    <form class="form-horizontal p-t-20" action="{{ route('category.new') }}" method="POST">
+                    <form class="form-horizontal p-t-20" action="{{ route('category.new') }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="exampleInputuname3" class="col-sm-3 control-label">Category Name</label>
