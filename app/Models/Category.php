@@ -43,4 +43,11 @@ class Category extends Model
         self::$category->save();
 
     }
+    public static function  deleteCategory($id){
+        self::$category = Category::find($id);
+            if(file_exists( self::$category->image)){
+                unlink(self::$category->image);
+            }
+            self::$category->delete();
+    }
 }

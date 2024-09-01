@@ -36,7 +36,8 @@
                                                 <i class="ti-agenda"></i>
                                             </a>
                                             <a href="{{ route('category.delete', ['id' => $category->id]) }}"
-                                                class="btn btn-danger btn-sm">
+                                                class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Are You sure Delete');">
                                                 <i class="ti-reddit"></i>
                                             </a>
                                         </td>
