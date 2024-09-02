@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SubCategory extends Model
 {
@@ -51,5 +52,9 @@ class SubCategory extends Model
                 unlink(self::$subCategory->image);
             }
             self::$subCategory->delete();
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 }

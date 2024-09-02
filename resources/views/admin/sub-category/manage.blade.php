@@ -25,7 +25,7 @@
                                 @foreach ($sub_categories as $sub_category)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $sub_category->category_id }} </td>
+                                        <td>{{ $sub_category->category->name }} </td>
                                         <td>{{ $sub_category->name }} </td>
                                         <td>{{ $sub_category->description }}</td>
                                         <td><img src="{{ asset($sub_category->image) }}" alt="{{ $sub_category->name }}"
