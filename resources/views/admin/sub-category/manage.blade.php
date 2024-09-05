@@ -16,8 +16,8 @@
                                     <th>Category Name</th>
                                     <th>Sub Category Name</th>
                                     <th> Description</th>
-                                    <th>Image</th>
-                                    <th> Status</th>
+                                    <th> Image</th>
+                                    <th>Publication Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -33,11 +33,11 @@
                                         </td>
                                         <td>{{ $sub_category->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                         <td>
-                                            <a href="{{ route('category.edit', ['id' => $sub_category->id]) }}"
+                                            <a href="{{ route('sub-category.edit', ['id' => $sub_category->id]) }}"
                                                 class="btn btn-success btn-sm">
                                                 <i class="ti-agenda"></i>
                                             </a>
-                                            <a href="{{ route('category.delete', ['id' => $sub_category->id]) }}"
+                                            <a href="{{ route('sub-category.delete', ['id' => $sub_category->id]) }}"
                                                 class="btn btn-danger btn-sm"
                                                 onclick="return confirm('Are You sure Delete');">
                                                 <i class="ti-reddit"></i>

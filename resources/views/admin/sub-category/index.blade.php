@@ -8,7 +8,7 @@
                     <h4 class="card-title">Add Sub Category Form</h4>
                     <h5 class="text-center text-success">{{ session('message') }}</h5>
                     <hr>
-                    <form class="form-horizontal p-t-20" action="{{ route('sub-ategory.new') }}" method="POST"
+                    <form class="form-horizontal p-t-20" action="{{ route('sub-category.new') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
@@ -52,8 +52,8 @@
                         </div>
                         <div class="form-group row m-b-0">
                             <div class="offset-sm-3 col-sm-9">
-                                <button type="submit" class="text-white btn btn-success waves-effect waves-light">New
-                                    Create Sub Category
+                                <button type="submit" class="text-white btn btn-success waves-effect waves-light">
+                                    Create New Sub Category Info
                                 </button>
                             </div>
                         </div>

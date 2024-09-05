@@ -39,7 +39,7 @@ Route::middleware([
 
 
     Route::get('/sub-category/add',[SubCategoryController::class,'index'])->name('sub-category.add');
-    Route::post('/sub-category/new',[SubCategoryController::class,'create'])->name('sub-ategory.new');
+    Route::post('/sub-category/new',[SubCategoryController::class,'create'])->name('sub-category.new');
     Route::get('/sub-category/manage',[SubCategoryController::class,'manage'])->name('sub-category.manage');
     Route::get('/sub-category/edit/{id}',[SubCategoryController::class,'edit'])->name('sub-category.edit');
     Route::post('/sub-category/update/{id}',[SubCategoryController::class,'update'])->name('sub-category.update');
