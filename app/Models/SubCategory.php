@@ -9,6 +9,7 @@ class SubCategory extends Model
 {
     use HasFactory;
     private static $subCategory, $image, $imageName, $directory, $imageUrl;
+    protected $fillable = ['name','description','image','status'];
     public static function getImageUrl($request){
         self::$image = $request->file('image');
         self::$imageName = Self::$image->getClientOriginalName();

@@ -105,19 +105,15 @@
                         <span class="hide-menu">Brand Module
                         </span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="ui-cards.html">Add Brand</a></li>
-                        <li><a href="ui-user-card.html">Brand Manage</a></li>
+                        <li><a href="{{ route('brand.add') }}">Add Brand</a></li>
+                        <li><a href="{{ route('brand.manage') }}">Brand Manage</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
                             class="ti-layout-media-right-alt"></i><span class="hide-menu">Unit Module</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="form-basic.html">Add unit</a></li>
-                        <li><a href="form-layout.html">manage unit</a></li>
-                        <li><a href="form-addons.html">Form Addons</a></li>
-                        <li><a href="form-material.html">Form Material</a></li>
-                        <li><a href="form-float-input.html">Floating Lable</a></li>
-
+                        <li><a href="{{ route('unit.add') }}">Add unit</a></li>
+                        <li><a href="{{ route('unit.manage') }}">manage unit</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i

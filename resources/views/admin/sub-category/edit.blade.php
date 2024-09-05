@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Sub Category Form</h4>
+                    <h4 class="card-title">Edit Sub Category Form</h4>
                     <h5 class="text-center text-success">{{ session('message') }}</h5>
                     <hr>
                     <form class="form-horizontal p-t-20"
