@@ -18,6 +18,8 @@
         href="{{ asset('admin/assets') }}/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('admin/assets') }}/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
+    <link href="{{ asset('admin/assets') }}/node_modules/summernote/dist/summernote-bs4.css" rel="stylesheet"
+        type="text/css">
 
     <!-- chartist CSS -->
     <link href="{{ asset('admin/assets') }}/node_modules/morrisjs/morris.css" rel="stylesheet">
@@ -27,6 +29,7 @@
     <link href="{{ asset('admin/dist') }}/css/style.min.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="{{ asset('admin/dist') }}/css/pages/dashboard1.css" rel="stylesheet">
+
 
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -95,6 +98,7 @@
     <!-- This is data table -->
     <script src="{{ asset('admin/assets') }}/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="{{ asset('admin/assets') }}/node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
+    <script src="{{ asset('admin/assets') }}/node_modules/summernote/dist/summernote-bs4.min.js"></script>
     <script>
         $(document).ready(function() {
             // Basic
@@ -187,6 +191,53 @@
             $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass(
                 'btn btn-primary me-1');
         });
+        $(function() {
+
+            $('.summernote').summernote({
+                height: 350, // set editor height
+                minHeight: null, // set minimum height of editor
+                maxHeight: null, // set maximum height of editor
+                focus: false // set focus to editable area after initializing summernote
+            });
+
+            $('.inline-editor').summernote({
+                airMode: true
+            });
+
+        });
+
+        window.edit = function() {
+                $(".click2edit").summernote()
+            },
+            window.save = function() {
+                $(".click2edit").summernote('destroy');
+            }
+    </script>
+
+    <script>
+        $(function() {
+            $(document).on('change', '#categoryId', function() {
+                var categoryId = $(this).val();
+                $.ajax({
+                    type: "GET",
+                    url: "{{ route('product.getSubCategoryByCategory') }}",
+                    data: {
+                        id: categoryId
+                    },
+                    dataType: "JSON",
+                    success: function(response) {
+                        var option = '';
+                        option += '<option value="" disabled selected>-- Selection Category --</option>';
+                        $.each(response, function(key, value) {
+                            option += '<option value="'+value.id+'" disabled selected>'+value.name+'</option>';
+                        })
+                        var subCategoryId = $('#subCategoryId');
+                        subCategoryId.empty();
+                        subCategoryId.append(option);
+                    }
+                })
+            })
+        })
     </script>
 
 </body>

@@ -12,14 +12,16 @@
                         enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
-                            <label for="exampleInputuname3" class="col-sm-3 control-label">Category Name</label>
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Category Name <span
+                                    class="text-danger">*</span></label>
                             <div class="col-sm-9">
                                 <input type="text" name="name" class="form-control" id="exampleInputuname3"
                                     placeholder="Category Name">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="exampleInputEmail3" class="col-sm-3 control-label">Category Description</label>
+                            <label for="exampleInputEmail3" class="col-sm-3 control-label">Category Description <span
+                                    class="text-danger">*</span></label>
                             <div class="col-sm-9">
                                 <textarea class="form-control" name="description" id="exampleInputEmail3" placeholder="Category Description"></textarea>
                             </div>
