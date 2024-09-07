@@ -8,4 +8,42 @@ use Illuminate\Database\Eloquent\Model;
 class OtherImage extends Model
 {
     use HasFactory;
+
+    private static $otherImage, $image, $imageName, $directory, $imageUrl, $imageExtension;
+
+    public static function getImageUrl($image)
+    {
+        self::$imageExtension = $image->getClientOriginalExtension();
+        self::$imageName = rand(1, 500000) . '.' . self::$imageExtension; //3432.jpg
+        self::$directory = 'upload/product-other-image/';
+        $image->move(self::$directory, self::$imageName);
+        self::$imageUrl = self::$directory . self::$imageName;
+        return self::$imageUrl;
+    }
+
+    public static function newOtherImage($images, $id)
+    {
+        foreach ($images as $image) {
+            self::$otherImage = new OtherImage();
+            self::$otherImage->product_id = $id;
+            self::$otherImage->image = self::getImageUrl($image);
+            self::$otherImage->save();
+        }
+
+
+    }
+
+    public static function updateOtherImage($images, $id)
+    {
+        self::$otherImage = OtherImage::where('product_id', $id)->get();
+        foreach (self::$otherImage as $image) {
+                if (file_exists($images->image)) {
+                    unlink($images->image);
+
+                }
+                $image->delete();
+            }
+            self::newOtherImage($images, $id);
+
+    }
 }

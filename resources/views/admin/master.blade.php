@@ -229,7 +229,7 @@
                         var option = '';
                         option += '<option value="" disabled selected>-- Selection Category --</option>';
                         $.each(response, function(key, value) {
-                            option += '<option value="'+value.id+'" disabled selected>'+value.name+'</option>';
+                            option += '<option value="'+value.id+'">'+value.name+'</option>';
                         })
                         var subCategoryId = $('#subCategoryId');
                         subCategoryId.empty();
