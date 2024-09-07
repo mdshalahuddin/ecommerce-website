@@ -57,10 +57,11 @@ public  function create(Request $request){
 
     $this->product = Product::newProduct($request);
     OtherImage::newOtherImage($request->other_image, $this->product->id);
-return back()->with('message','Product info create successfully');
+return redirect('/product/add')->with('message','Product info create successfully');
 }
 public function delete($id){
     Product::deleteProduct($id);
+    OtherImage::deleteOtherImage( $id);
     return redirect('/product/manage')->with('message','Product info delete successfully');
 }
 
