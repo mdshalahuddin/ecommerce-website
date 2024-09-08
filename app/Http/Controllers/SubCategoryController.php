@@ -13,7 +13,7 @@ class SubCategoryController extends Controller
     }
     public  function create(Request $request){
         SubCategory::newSubCategory($request);
-    return redirect('/sub-category/manage')->with('message','Sub Category info create successfully');
+    return redirect('/sub-category/add')->with('message','Sub Category info create successfully');
     }
     public function manage(){
         return view('admin.sub-category.manage',['sub_categories'=>subCategory::all()]);

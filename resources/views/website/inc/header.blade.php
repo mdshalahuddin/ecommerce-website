@@ -196,18 +196,18 @@
                     <div class="mega-category-menu">
                         <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
                         <ul class="sub-category">
-                            @foreach($categories as $category)
-                            <li><a href="{{ route('product-category') }}">{{$category->name}}
-                                    @if(count($category->subCategories)> 0)
-                                        <i class="lni lni-chevron-right"></i>
-                                    @endif
-                                </a>
-                                <ul class="inner-sub-category">
-                                    @foreach($category->subCategories as $subCategory)
-                                    <li><a href="product-grids.html">{{$subCategory->name}}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
+                            @foreach ($categories as $category)
+                                <li><a href="{{ route('product-category', ['id' => $category->id]) }}">{{ $category->name }}
+                                        @if (count($category->subCategories) > 0)
+                                            <i class="lni lni-chevron-right"></i>
+                                        @endif
+                                    </a>
+                                    <ul class="inner-sub-category">
+                                        @foreach ($category->subCategories as $subCategory)
+                                            <li><a href="product-grids.html">{{ $subCategory->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                             @endforeach
                         </ul>
                     </div>

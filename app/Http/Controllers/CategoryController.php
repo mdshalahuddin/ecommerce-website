@@ -26,7 +26,7 @@ return redirect('/category/manage')->with('message','Category info Update succes
 
 public  function create(Request $request){
 Category::newCategory($request);
-return redirect('/category/manage')->with('message','Category info create successfully');
+return redirect('/category/add')->with('message','Category info create successfully');
 }
 public function delete($id){
     Category::deleteCategory($id);
